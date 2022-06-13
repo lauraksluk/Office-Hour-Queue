@@ -1,0 +1,48 @@
+{% extends "ohq/main.html" %}
+
+{% block additional-head %}
+    {% load static %}
+    <script src="{% static 'ohq/shared.js' %}" type="text/javascript"></script>
+    <script src="{% static 'ohq/instructor.js' %}" type="text/javascript"></script>
+    <link rel="stylesheet" href="/static/ohq/statistics.css">
+{% endblock %}
+
+{%block left-content %}
+
+<table class="stats-table">
+<tr>
+    <th> Date </th>
+    <th> Question Count </th>
+    <th> Avg time to resolve (minutes) </th>
+</tr>
+
+{% for day in result %}
+    <tr>
+        <td> {{ day.date }}</td>
+        <td> {{ day.question_count }} </td>
+        <td> {{ day.time_to_resolve }} </td>
+    </tr>
+{% endfor %}
+
+</table>
+
+{% endblock %}
+
+
+{% block right-content %}
+
+{% endblock %}
+
+{% block javascript %}
+<script>
+    let this_page = "instructor"
+    let first_refresh = true
+    document.getElementById("notification-container-id").style.visibility = "hidden";
+    document.getElementById("happening-now").innerHTML = "Statistics for {{ queue_name }}"
+
+</script>
+
+{% endblock %}
+
+
+

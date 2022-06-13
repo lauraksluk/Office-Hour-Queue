@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title> Login Page </title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dosis:wght@300&display=swap');
+        </style>
+        <link rel="stylesheet" href="/static/ohq/login.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="container-item1" style="flex-basis: 10px; flex-grow: 2;">
+                <a class="line-logo" href="{% url 'home'%}"><img src="/static/ohq/side-logo.png" alt='logo' class='logo' width="40px" height="28px"></a>
+                <a class="ohq-text">Office Hour Queue</a>
+            </div>
+            <div class="container-item2" style="flex-basis: 10px; flex-grow: 1;">
+                {% load static %}
+                <a href="{% url 'register' %}"><button class="register-button">Register</button></a>
+                <a href="{% url 'oauth' %}"><button class="oAuth-button">Login with Google Account</button></a>
+                <!-- <a><img src="/static/ohq/home-icon.png"></a> -->
+            </div>
+        </div>
+
+        <div class="login-container">
+            <h2 class="login">Login</h2>
+            <form method="post" >
+                <table class="login-table">
+                    {{form}}
+                </table>
+                <div >
+                    <button class="submit-button" type="submit">
+                        Submit
+                    </button>
+                </div>
+                {% csrf_token %}
+            </form>
+    
+            <div class="footer">
+                <a> ©️Carnegie Mellon University</a>
+            </div>
+        </div>
+    </body>

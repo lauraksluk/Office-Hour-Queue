@@ -1,0 +1,58 @@
+{% extends "ohq/main.html" %}
+
+{% block additional-head %}
+    {% load static %}
+    <script src="{% static 'ohq/shared.js' %}" type="text/javascript"></script>
+    <script src="{% static 'ohq/instructor.js' %}" type="text/javascript"></script>
+{% endblock %}
+
+{%block left-content %}
+
+<div class="upload-instruction">
+<h4>
+Please upload a .csv file with one course name and instructor email address per line (comma separated).
+Example:
+<br>
+<br>
+course1,email1@cmu.edu
+<br>
+course1,email2@cmu.edu
+<br>
+course9,abc@cmu.edu
+</h4>
+</div>
+
+<div class="upload-container">
+    <form enctype="multipart/form-data" action="{% url 'upload-instructors-list' %}" method="post">
+        {{ form }}
+        {% csrf_token %}
+        <tr>
+            <td colspan="3"><input id="id_csv_upload_button" type="submit" value="Upload"></td>
+        </tr>
+    </form>
+
+    <div id="id_upload_results">
+        <span> {{error_message|linebreaks}} </span>
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block right-content %}
+
+{% endblock %}
+
+{% block javascript %}
+<script>
+    let this_page = "instructor"
+    let first_refresh = true
+    document.getElementById("notification-container-id").style.visibility = "hidden";
+    document.getElementById("happening-now").innerHTML = "Instructor Role Upload"
+
+</script>
+
+{% endblock %}
+
+
+

@@ -1,0 +1,83 @@
+{% extends "ohq/main.html" %}
+
+{% block additional-head %}
+    {% load static %}
+    <script src="{% static 'ohq/shared.js' %}" type="text/javascript"></script>
+    <script src="{% static 'ohq/student.js' %}" type="text/javascript"></script>
+{% endblock %}
+
+{%block left-content %}
+<h2 id="queue-status-heading">
+    The queue is currently <span id="queue-status"> </span>
+</h2>
+
+<h2 id="number-waiting-questions">
+    Current number of students in the queue is <span id="student-number"> </span>
+</h2>
+
+<h2 id="curr-position-in-queue">
+    You haven't asked a question yet.
+</h2>
+
+<form action="{% url 'remove_question' this_queue_id %}" method="post">
+    <input type='submit' id="remove-question-button" value="Remove my question" style="visibility:hidden">
+    {% csrf_token %}
+</form>
+
+
+<div class='form'>
+    <form class="add_to_ohq" action="{% url 'add_question' this_queue_id %}" method="post">
+        <div class="quesform">
+           <a class="quesform-text">QUESTION FORM</a>
+        </div>
+
+        <div id="input-location">
+            <a>Location:</a>
+            <input id="location" type="text" name="location" value="{{ current_question.location|default:'' }}"
+                   autofocus required>
+        </div>
+
+        <div id="input-question-type">
+            <a>Question Type:</a>
+            <input id="question_type" type="text" name="question_type"
+                   value="{{ current_question.question_type|default:'' }}" required>
+        </div>
+
+        <div id="input-question-content">
+            <a id="question-detail">Question Detail:</a><br>
+            <textarea id="content" type="text" name="content" required>{{ current_question.content|default:'' }}</textarea>
+        </div>
+
+        <div class="buttons-in-form-submission">
+            <div>
+                <button id="id_post_button">Submit</button>
+            </div>
+        </div>
+    {% csrf_token %}
+    </form>
+</div>
+{% endblock %}
+
+
+{% block right-content %}
+<div id="announcements-content"></div>
+{% endblock %}
+
+
+{% block javascript %}
+    <script>
+        let this_page = "student"
+        let this_queue_id = "{{ this_queue_id }}"
+        let first_refresh = true
+
+        let ajax_fns = function() { getQueueStatus(); getWaitingQuestionsCount(); getAnnouncementStudent()}
+        let load_fns = function() {
+            getQueueStatus(); getWaitingQuestionsCount(); getAnnouncementStudent(); getAlertWhenInFrontOfQueue();
+            getAlertWhenItIsTheirTurn()
+        }
+        window.onload = load_fns;
+        window.setInterval(ajax_fns, 2000);
+        window.setInterval(getAlertWhenItIsTheirTurn, 60000); // alert every 1 minute to remind the student when it is their turn
+    </script>
+
+{% endblock %}

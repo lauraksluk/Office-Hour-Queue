@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title> Register Page </title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dosis:wght@300&display=swap');
+        </style>
+        <link rel="stylesheet" href="/static/ohq/login.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="container-item1" style="flex-basis: 10px; flex-grow: 2;">
+                <a class="line-logo" href="{% url 'home'%}"><img src="/static/ohq/side-logo.png" alt='logo' class='logo' width="40px" height="28px"></a>
+                <a class="ohq-text">Office Hour Queue</a>
+            </div>
+            <div class="container-item2" style="flex-basis: 10px; flex-grow: 1;">
+                <a href="{% url 'login' %}"><button class="register-button">Login</button></a>
+                <a href="{% url 'oauth' %}"><button class="oAuth-button">Login with Google Account</button></a>
+                <!-- <a><img src="/static/ohq/home-icon.png"></a> -->
+            </div>
+        </div>
+
+        <div class="register-container">
+            <h2 class="login">Register</h2>
+            <form method="post" action="{% url 'register' %}">
+                <table class="login-table">
+                    {{form}}
+                </table>
+                <div >
+                    <button class="submit-button" type="submit">
+                        Submit
+                    </button>
+                </div>
+                {% csrf_token %}
+            </form>
+    
+            <div class="footer-register">
+                <a> ©️Carnegie Mellon University</a>
+            </div>
+        </div>
+    </body>
+
+
+
+
+
+
+<!-- <div id="id_page_name" class="login">
+    <h1>
+    R e g i s t e r
+    </h1>
+</div>
+<form method="post" action="{% url 'register' %}">
+    <table class="logintb" style="font-size: 18px;">
+        {{form}}
+    </table>
+    {% csrf_token %}
+    <div class="loginsubmitbutton">
+        <button type="submit" id="id_login_button" class="loginsubmit">
+            SUBMIT
+        </button>
+    </div>
+</form> -->
+

@@ -1,0 +1,22 @@
+body {
+    background:white;
+    font-family: 'Poppins', sans-serif;
+    width: auto;
+    min-width: 1200px;
+}
+
+.question-div {
+    border-radius: 25px;
+    border: 2px solid #3876d0;
+    padding: 15px;
+    width: 400px;
+    height: 100px;
+}
+
+.student-info {
+    font-weight: bold;
+}
+
+.ohq-text{
+  min-width: 350px;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Home Page</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dosis:wght@300&display=swap');
+        </style>
+        <link rel="stylesheet" href="/static/ohq/home.css">
+    </head>
+    <body>
+        <div class="entrance">
+                <a href="{% url 'login' %}"><button class="login">Login</button></a>
+                <a href="{% url 'register' %}"><button class="register">Register</button></a>
+        </div>
+
+        <div class="image">
+            <img src="/static/ohq/homemiddle.png" >
+        </div>
+
+        <div class="line">
+            <hr>
+        </div>
+            
+        <div class="copyright_container">
+            <div class="footer_contaier1">
+                <p>Copyright ©️Team_33 2022</p>
+                <p>Carnegie Mellon University</p>
+                <p>Web Application Spring22</p>
+            </div>
+        
+            <div class="footer_contaier2">
+                <p>Contact US</p>
+                <p>carnegiemellon@andrew.cmu.edu</p>
+                <p>5000 Forbes Avenue, Pittsburgh, P.A., 15213</p>
+            </div>      
+        </div>
+
+
+        <!-- <h1>
+        <div id="header" class="baseheader">
+           O f f i c e  &ensp; H o u r s 
+        </div></h1>
+        <div class="content">
+            {% block content %}
+            <div class="buttondiv">
+            <a href="{% url 'login' %}"><button class="loginbutton">LOG IN</button></a>
+            </div>
+
+            <div class="buttondiv">
+                <a href="{% url 'register' %}"><button class="loginbutton">REGISTER</button></a>
+            </div>
+      {% endblock %}
+        </div> -->
+    </body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

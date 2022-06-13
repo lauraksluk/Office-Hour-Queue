@@ -1,0 +1,151 @@
+body{
+    background:white;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .container{
+    background-color: #46A6EB;
+    height: 5em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 800px;
+   
+  }
+
+  .ohq-text{
+      min-width: 350px;
+  }
+
+  .container-item1{
+    color: white;
+    text-align: center;
+    width: 10em;
+    line-height: 200%; 
+    font-weight: 800;
+    font-size: 2em;
+    flex-basis: 10em;
+    display: flex;
+    align-items: center;
+  }
+
+  .line-logo{
+    text-align: center;
+    margin-left:1em;
+    margin-right:0.2em;
+    min-width: 80px;
+  }
+
+  .login{
+    padding-bottom: 0.5em;
+  }
+
+  .container-item2{
+    min-width: 200px;
+    display:flex;
+  }
+
+  .login-container{
+    text-align: center;
+    color: white;
+    background-color: #46A6EB;
+    height:20em;
+    width:50%;
+    margin:5em auto;
+    /* margin: 5em 18em 0px 18em; */
+    border: 0.5em; 
+    border-radius: 1.2em;  
+    padding: 3em 3em 3em 3em;
+  }
+
+  .register-container{
+    text-align: center;
+    color: white;
+    background-color: #46A6EB;
+    height:25em;
+    width:50%;
+    margin:5em auto;
+    /* margin: 5em 18em 0px 18em; */
+    border: 0.5em; 
+    border-radius: 1.2em;  
+    padding: 1em 3em 1em 3em;
+  }
+
+  .login-table{
+    margin-left: auto;
+    margin-right: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footer{
+    color:#F9EB71;
+    font-size: 0.9em;
+    margin:4em 0em 0em 3em;
+  }
+
+  .footer-register{
+    color:#F9EB71;
+    font-size: 0.9em;
+    margin:0.5em 0em 0em 3em;
+    
+  }
+
+  .submit-button{
+    text-align: center;
+    color:black; 
+    background-color: #FAF3FF; 
+    border: 0.5em; 
+    border-radius: 0.5em;  
+    padding: 0.8em 2em 0.8em 2em;
+    margin: 2em 2em 2em 3.4em;
+    padding: 0.6em 1.2em 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: bold;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    box-shadow: 0 4px 12px 0 rgba(0,0,0,0.2), 0 6px 18px 0 rgba(0,0,0,0.19);
+  }
+
+  .register-button{
+    text-align: center;
+    color:black; 
+    background-color: #FAF3FF; 
+    border: 0.5em; 
+    border-radius: 0.5em;  
+    padding: 0.6em 1.2em 0.6em 1.2em;
+    font-size: 1em;
+    /* font-weight: bold; */
+    margin:0em 1.5em 0em 0em;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    box-shadow: 0 4px 12px 0 rgba(0,0,0,0.2), 0 6px 18px 0 rgba(0,0,0,0.19);
+  }
+
+  .register-button:hover, .oAuth-button:hover, .submit-button:hover{
+    background-color: rgb(182, 182, 229); 
+  }
+  
+  .oAuth-button{
+    text-align: center;
+    color:black; 
+    background-color: #FAF3FF; 
+    border: 0.5em; 
+    border-radius: 0.5em;  
+    padding: 0.6em 1.2em 0.6em 1.2em;
+    font-size: 1em;
+    /* font-weight: bold; */
+    margin:0em 0em 0em 1.5em;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    box-shadow: 0 4px 12px 0 rgba(0,0,0,0.2), 0 6px 18px 0 rgba(0,0,0,0.19);
+  }
+
+  
+  
+  
+
+  
+
